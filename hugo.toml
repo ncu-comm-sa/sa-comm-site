@@ -1,0 +1,23 @@
+# ==========================================
+# Hugo 基礎設定 (Base Configuration)
+# ==========================================
+baseURL = 'https://sa.ce.ncu.edu.tw'
+locale = 'zh-tw'
+title = '國立中央大學通訊工程學系系學會'
+theme = 'tailbliss'
+
+[menu]
+    [[menu.main]]
+        name = '關於我們'
+        url = '/about/'
+        weight = 10
+
+    [[menu.main]]
+        name = '歷任幹事會'
+        url = '/secretary/'
+        weight = 20
+
+    [[menu.main]]
+        name = '聯絡我們'
+        url = '/secretary/'
+        weight = 30
