@@ -27,8 +27,11 @@ jobs:
         with:
           node-version: '24' # 使用 LTS 版本的 Node.js
 
-      - name: Install dependencies
-        run: npm install --prefix ./themes/tailbliss
+      - name: Install PostCSS and Dependencies
+        run:
+            npm install -g postcss postcss-cli autoprefixer tailwindcss
+            if [ -f "package.json" ]; then npm install; fi
+            if [ -f "themes/tailbliss/package.json" ]; then npm install --prefix themes/tailbliss; fi
 
       - name: Build Hugo Site
         run: hugo --minify
