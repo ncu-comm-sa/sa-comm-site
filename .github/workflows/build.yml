@@ -32,6 +32,7 @@ jobs:
           npm install postcss postcss-cli autoprefixer tailwindcss
           cd themes/tailbliss
           npm install --include=optional
+          npm install lightningcss-linux-x64-gnu
 
       - name: Build Hugo Site
         run: hugo --minify
