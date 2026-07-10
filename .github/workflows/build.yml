@@ -29,10 +29,11 @@ jobs:
 
       - name: Install PostCSS and Dependencies
         run: |
+          rm -rf node_modules package-lock.json
           npm install postcss postcss-cli autoprefixer tailwindcss
           cd themes/tailbliss
-          npm install --include=optional
-          npm install lightningcss-linux-x64-gnu
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: Build Hugo Site
         run: hugo --minify
