@@ -29,11 +29,10 @@ jobs:
 
       - name: Install PostCSS and Dependencies
         run: |
-          rm -rf node_modules package-lock.json
-          npm install postcss postcss-cli autoprefixer tailwindcss
-          cd themes/tailbliss
-          rm -rf node_modules package-lock.json
+          rm -rf node_modules package-lock.json themes/tailbliss/node_modules themes/tailbliss/package-lock.json
+          cp themes/tailbliss/package.json ./
           npm install
+          npm install postcss postcss-cli autoprefixer
 
       - name: Build Hugo Site
         run: hugo --minify
