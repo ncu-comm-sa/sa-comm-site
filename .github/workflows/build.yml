@@ -29,9 +29,8 @@ jobs:
 
       - name: Install PostCSS and Dependencies
         run:
-            npm install -g postcss postcss-cli autoprefixer tailwindcss
-            if [ -f "package.json" ]; then npm install; fi
-            if [ -f "themes/tailbliss/package.json" ]; then npm install --prefix themes/tailbliss; fi
+          npm install -g postcss postcss-cli autoprefixer tailwindcss
+          npm install --prefix themes/tailbliss
 
       - name: Build Hugo Site
         run: hugo --minify
