@@ -29,18 +29,7 @@ jobs:
           extended: true
 
       - name: Install Dependencies
-        run: |
-          # 1. 一樣先確保環境乾淨，拉出 package.json
-          find . -name "package-lock.json" -type f -delete
-          rm -rf node_modules themes/tailbliss/node_modules
-          cp themes/tailbliss/package.json ./package.json
-          
-          # 2. 你的直覺解法：手動強制安裝 Linux x64 專用的 lightningcss 二進位檔
-          npm install lightningcss-linux-x64-gnu --ignore-scripts
-          
-          # 3. 安裝其他一般套件
-          npm install --ignore-scripts
-          npm install postcss postcss-cli autoprefixer --ignore-scripts
+        run: npm install --os=linux --cpu=x64 --include=optional
 
       - name: Build Hugo Site
         run: hugo --minify
