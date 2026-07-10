@@ -30,18 +30,16 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          # 1. 清除所有的 lock 檔，強迫在 Linux 伺服器重新解析套件
+          # 1. 一樣先確保環境乾淨，拉出 package.json
           find . -name "package-lock.json" -type f -delete
           rm -rf node_modules themes/tailbliss/node_modules
-
-          # 2. 將主題的套件清單拉到根目錄，統一 Node.js 的尋找路徑
           cp themes/tailbliss/package.json ./package.json
           
-          # 3. 關鍵魔法：--ignore-scripts
-          # 這會略過 tailbliss 預設的 install.js，只乖乖下載套件，完美避開剛剛的找不到檔案錯誤
-          npm install --ignore-scripts
+          # 2. 你的直覺解法：手動強制安裝 Linux x64 專用的 lightningcss 二進位檔
+          npm install lightningcss-linux-x64-gnu --ignore-scripts
           
-          # 4. 安裝 Hugo 呼叫 PostCSS 所需的 CLI 工具
+          # 3. 安裝其他一般套件
+          npm install --ignore-scripts
           npm install postcss postcss-cli autoprefixer --ignore-scripts
 
       - name: Build Hugo Site
