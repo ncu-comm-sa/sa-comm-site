@@ -4,55 +4,49 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch: # 允許在 GitHub 網頁上手動點擊執行
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 取得完整程式碼 (包含 tailbliss 主題)
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
 
-      # 2. 設定 Node.js 環境 (使用最新 LTS 避免警告)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
 
-      # 3. 設定 Hugo 環境 (啟用 extended 支援 Tailwind/SCSS)
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
 
-      # 4. 暴力且乾淨地安裝所有前端依賴 (解決所有路徑與系統相容性問題)
-      - name: Install All Dependencies
+      - name: Install Dependencies
         run: |
-          # 步驟 A: 清除專案內所有的 lock 檔與舊模組，強迫 npm 針對 GitHub 的 Linux 伺服器重新下載
+          # 1. 清除所有的 lock 檔，強迫在 Linux 伺服器重新解析套件
           find . -name "package-lock.json" -type f -delete
           rm -rf node_modules themes/tailbliss/node_modules
 
-          # 步驟 B: 把主題的 package.json 抽到最外層的根目錄
-          # 這招能實現「統一路徑」，徹底消滅 Node.js 找不到 lightningcss 模組的解析錯誤
+          # 2. 將主題的套件清單拉到根目錄，統一 Node.js 的尋找路徑
           cp themes/tailbliss/package.json ./package.json
           
-          # 步驟 C: 在根目錄乾淨安裝 (此時會正確抓取 Linux 版的底層二進位檔)
-          npm install
+          # 3. 關鍵魔法：--ignore-scripts
+          # 這會略過 tailbliss 預設的 install.js，只乖乖下載套件，完美避開剛剛的找不到檔案錯誤
+          npm install --ignore-scripts
           
-          # 步驟 D: 補上 Hugo 呼叫 PostCSS 必備的 CLI 工具
-          npm install postcss postcss-cli autoprefixer
+          # 4. 安裝 Hugo 呼叫 PostCSS 所需的 CLI 工具
+          npm install postcss postcss-cli autoprefixer --ignore-scripts
 
-      # 5. 編譯靜態網站
       - name: Build Hugo Site
         run: hugo --minify
 
-      # 6. 上傳產物以供下載檢查
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
