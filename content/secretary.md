@@ -1,6 +1,6 @@
 ---
 title: "歷屆幹事會"
-date: 2021-12-18T11:10:36+08:00
+date: 2026-07-11T10:09:35+00:00
 draft: false
 language: zh
 description: 歷屆幹事會成員列表（自 115 學年度起）

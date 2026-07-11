@@ -1,10 +1,10 @@
 ---
 title: "關於我們"
-date: 2021-12-18T11:10:36+08:00
+date: 2026-07-11T10:09:35+00:00
 draft: false
 language: zh
 description: 關於我們
-featured_image: ../assets/images/featured/featured-about.jpg
+featured_image: ../assets/images/featured/events.jpg
 ---
 
 > 圖：114 學年度耶誕晚會
