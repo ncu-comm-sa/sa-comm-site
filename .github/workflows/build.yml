@@ -28,14 +28,23 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Setup Build Environment
+      - name: Install Dependencies
         run: |
+          # 1. 根目錄：安裝 Hugo 必備的 PostCSS 外殼
           npm init -y
+          npm install postcss postcss-cli
           
-          # 直接在根目錄安裝 PostCSS 與 Tailwind v4 生態系。
-          # 這樣做能完全繞過主題的 install.js 帶來的版本衝突，
-          # 讓 NPM 自動為你配對「版本完全一致」的主程式與 Linux 底層引擎！
-          npm install postcss postcss-cli tailwindcss @tailwindcss/postcss autoprefixer
+          # 2. 進入主題資料夾
+          cd themes/tailbliss
+          
+          # 3. 完美套用你找到的解法！
+          # 強制安裝 Linux x64 gnu 版本的核心引擎，並且不讓 npm 忽略它們。
+          # 同時加上 --ignore-scripts 阻止作者的腳本把它們丟到根目錄。
+          # 這樣主程式跟引擎就會完美地綁定在同一個 node_modules 裡了！
+          npm install lightningcss-linux-x64-gnu @tailwindcss/oxide-linux-x64-gnu --ignore-scripts
+          
+          # 4. 正常安裝主題內的其他套件
+          npm install --ignore-scripts
 
       - name: Build Hugo Site
         run: hugo --minify
