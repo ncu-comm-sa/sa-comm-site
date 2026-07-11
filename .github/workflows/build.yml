@@ -17,32 +17,47 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-
+      # 1. 準備 pnpm 與 Node 環境
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'pnpm'
+
+      # 2. 準備 Hugo 環境
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
 
-      - name: Install Dependencies
+      # 3. 完美復刻官方編譯流程
+      - name: Build Theme CSS
         run: |
-          cd ./themes/tailbliss
+          # 進入主題目錄
+          cd themes/tailbliss
+          
+          # 官方步驟 1: 安裝依賴
           pnpm install
+          
+          # 官方步驟 2: 編譯 CSS (改為 production 版本)
+          pnpm run build:css
+          
+          # 官方步驟 3: 建立根目錄的 static/css 並把編譯好的成品複製過去
+          # 這是免除 PostCSS 報錯的最關鍵步驟！
+          mkdir -p ../../static/css/
+          cp static/css/main.*.css ../../static/css/
 
+      # 4. 產生 Hugo 網站 (取代官方的 hugo server)
       - name: Build Hugo Site
-        run: |
-          cd ../..
-          hugo --minify
+        run: hugo --minify
 
+      # 5. 上傳 Artifact 給後續部署使用
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
