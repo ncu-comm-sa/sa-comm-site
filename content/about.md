@@ -11,4 +11,4 @@ featured_image: ../assets/images/featured/featured-about.jpg
 
 我們是**國立中央大學通訊工程學系系學會**！
 
-目前
+> 本頁尚在撰寫中，敬請期待。
