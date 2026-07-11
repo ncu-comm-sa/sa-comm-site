@@ -29,10 +29,30 @@ jobs:
           extended: true
 
       - name: Install Dependencies
-        run: npm install --os=linux --cpu=x64 --include=optional
+        run: | 
+          npm install --prefix themes/tailbliss
+          npm i lightningcss-linux-x64-gnu @tailwindcss/oxide-linux-x64-gnu sass-embedded-linux-x64
 
       - name: Build Hugo Site
-        run: hugo --minify
+        run: |
+          # 1. 進入主題資料夾，這裡面有所有需要的 devDependencies
+          cd themes/tailbliss
+            
+          # 2. 刪除原作者可能在 Mac/Windows 留下的 lock 檔，確保 Linux 環境能正確抓到 lightningcss 核心
+          rm -f package-lock.json
+            
+          # 3. 正常安裝依賴（預設就會包含 devDependencies）
+          npm install
+            
+          # 4. 退回到你的專案根目錄
+          cd ../../
+            
+          # 5. 確保根目錄有 Hugo 呼叫 PostCSS 需要的基本 CLI，避免 Hugo 報錯
+          npm init -y
+          npm install postcss postcss-cli
+            
+          # 6. 執行編譯
+          hugo --minify
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
