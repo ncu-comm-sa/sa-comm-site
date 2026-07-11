@@ -123,9 +123,55 @@
         </div>
     </div>
     <!-- 活動辦理 (Section 2) -->
-    <div class="overflow-hidden sm:pt-6 lg:relative my-12">
-        <div class="px-4 mx-auto max-w-md sm:max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-12 lg:px-8">
-            <div>
+    <style>
+        @media (min-width: 1024px) {
+            .sec2-col-image {
+                order: 2 !important;
+            }
+            .sec2-col-text {
+                order: 1 !important;
+            }
+            .sec2-bg-container {
+                right: auto !important;
+                left: 0 !important;
+                width: 100vw !important;
+            }
+            .sec2-bg-card {
+                right: auto !important;
+                left: 18rem !important;
+            }
+            .sec2-svg {
+                right: auto !important;
+                left: -2rem !important;
+            }
+        }
+    </style>
+    <div class="relative my-4">
+        <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
+            <div class="relative sm:py-8 lg:py-0 sec2-col-image">
+                <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 sec2-bg-container">
+                    <div class="absolute inset-y-0 left-1/2 w-full bg-gray-50 rounded-l-3xl dark:bg-gray-900/10 sec2-bg-card"></div>
+                    <svg class="absolute top-8 right-1/2 -mr-3 lg:top-12 sec2-svg" width="404" height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
+                        <defs>
+                            <pattern id="02f20b47-fd69-4224-a62a-4c9de5c763f7-sec2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-900/60" fill="currentcolor"></rect>
+                            </pattern>
+                        </defs>
+                        <rect width="404" height="392" fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7-sec2)"></rect>
+                    </svg>
+                </div>
+                <div class="relative px-4 py-6 mx-auto w-full h-auto sm:max-w-3xl sm:px-6 lg:px-0 lg:py-20">
+                    <div class="overflow-hidden rounded-2xl shadow-xl">
+                        {{ $p2image := resources.Get .Site.Params.P2.Image }}
+                        {{ with $p2image }}
+                        {{ with .Resize "600x webp q85" }}
+                        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="w-full h-auto" alt="P2" loading="lazy" style="aspect-ratio: auto;" />
+                        {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            <div class="relative px-4 mx-auto max-w-md sm:max-w-3xl sm:px-6 lg:px-0 sec2-col-text">
                 <div class="md:pt-12 sm:pt-6 lg:pt-20">
                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
                         {{ .Site.Params.P2.Heading }}
@@ -139,29 +185,6 @@
                             {{ end }}
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
-            <div class="md:py-12 sm:relative sm:mt-12 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                <div class="hidden sm:block">
-                    <div class="absolute inset-y-0 left-1/2 w-screen bg-gray-50 rounded-l-3xl dark:bg-gray-900/10 lg:left-80 lg:right-0 lg:w-full"></div>
-                    <svg class="absolute top-8 right-1/2 -mr-3 lg:left-0 lg:m-0 lg:top-12" width="404" height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
-                        <defs>
-                            <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                                <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-900/60" fill="currentcolor"></rect>
-                            </pattern>
-                        </defs>
-                        <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-                    </svg>
-                </div>
-                <div class="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
-                    {{ $p2image := resources.Get .Site.Params.P2.Image }}
-                    {{ with $p2image }}
-                    {{ with .Resize "800x webp q85" }}
-                    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="P2" class="w-full rounded-lg shadow-xl lg:h-full lg:w-auto lg:max-w-none" style="aspect-ratio: auto;" loading="lazy" />
-                    {{ end }}
-                    {{ end }}
                 </div>
             </div>
         </div>
