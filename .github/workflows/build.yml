@@ -27,7 +27,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-          cache: 'pnpm'
 
       # 2. 準備 Hugo 環境
       - name: Setup Hugo
