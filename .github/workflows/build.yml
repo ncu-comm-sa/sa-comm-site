@@ -35,7 +35,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd themes/tailbliss
+          cd ./themes/tailbliss
           pnpm install
 
       - name: Build Hugo Site
