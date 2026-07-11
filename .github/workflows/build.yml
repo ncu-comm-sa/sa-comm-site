@@ -28,21 +28,14 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Install Dependencies via NPM Workspaces
+      - name: Setup Build Environment
         run: |
-          # 1. 建立 Workspace：告訴 NPM 根目錄與主題是「一體」的，請統一管理它們
-          echo '{"name": "sa-comm-site", "private": true, "workspaces": ["themes/tailbliss"]}' > package.json
-            
-          # 2. 第一次安裝：NPM 會自動整合主題的套件，把它們完美配置在根目錄。
-          # 同時，這會觸發作者的 install.js，將 Linux 專用清單寫入根目錄的 package.json
-          npm install
-            
-          # 3. 第二次安裝：因為作者的 install.js 剛剛在 package.json 塞入了新的底層引擎清單
-          # 我們必須再跑一次 npm install，讓 NPM 把這些實體檔案抓下來，並確保版本完美匹配
-          npm install
-            
-          # 4. 補齊 Hugo 呼叫 PostCSS 需要的基礎外殼
-          npm install postcss postcss-cli
+          npm init -y
+          
+          # 直接在根目錄安裝 PostCSS 與 Tailwind v4 生態系。
+          # 這樣做能完全繞過主題的 install.js 帶來的版本衝突，
+          # 讓 NPM 自動為你配對「版本完全一致」的主程式與 Linux 底層引擎！
+          npm install postcss postcss-cli tailwindcss @tailwindcss/postcss autoprefixer
 
       - name: Build Hugo Site
         run: hugo --minify
