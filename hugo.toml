@@ -3,8 +3,85 @@
 # ==========================================
 baseURL = 'https://sa.ce.ncu.edu.tw'
 locale = 'zh-tw'
-title = '國立中央大學通訊工程學系系學會'
+title = 'SA COMM NCU'
 theme = 'tailbliss'
+
+[params]
+    author = '國立中央大學通訊工程學系系學會'
+    moto = '通連中大工程志　訊聚同窗系會情'
+    description = '系學會官網'
+    newsletter_signup = false
+
+[params.social_media]
+    [params.social_media.facebook]
+        enabled = true
+        url = 'https://www.facebook.com/profile.php?id=61590807508834'
+    [params.social_media.instagram]
+        enabled = true
+        url = 'https://www.instagram.com/ncu_comm.sa/'
+    [params.social_media.linkedin]
+        enabled = false
+        url = 'https://linkedin.com/company/your-profile'
+    [params.social_media.github]
+        enabled = false
+        url = 'https://github.com/your-org'
+    [params.social_media.bluesky]
+        enabled = false
+        url = 'https://bsky.app/profile/your-profile'
+    [params.social_media.twitter]
+        enabled = false
+        url = 'https://twitter.com/your-profile'
+
+[params.p1]
+    heading = '本會宗旨'
+    image = 'images/pages/mission.JPG'
+    [[params.p1.content]]
+        text = '本會《組織章程》明定：「本會之宗旨在促進凝聚全體會員之向心力，培養獨立、負責的精神。」'
+    [[params.p1.content]]
+        text = '（左圖：115年度第17屆通訊營活動側拍）'
+
+[params.p2]
+    heading = '活動辦理'
+    image = 'images/pages/events.jpg'
+    [[params.p2.content]]
+        text = '我們期待通過辦理各項有趣的活動，讓大家在忙於課程之餘，能夠調劑身心、聯絡情誼，快樂且順利地同舟共濟，度過大學四年的生活。'
+    [[params.p2.content]]
+        text = '（右圖：114學年度耶誕晚會）'
+
+[params.p3]
+    heading = '自治事務'
+    image = 'images/pages/114fresh.jpg'
+    [[params.p3.content]]
+        text = '另外，我們也在系上進行學生自治活動的推廣，期待通過促進同學們的參與，培養本系學生獨立、負責的態度，並一起成為「具人文關懷之社會菁英」。'
+    [[params.p3.content]]
+        text = '（左圖：114學年度新生營，國立中央大學辦理）'
+
+[params.p4]
+    heading = '合作夥伴與贊助商'
+    [[params.p4.content]]
+        text = '感謝以下合作夥伴與贊助商對本會活動的大力支持！因為有您，我們才能提供更好的服務與活動品質。'
+    [[params.p4.logos]]
+        identifier = 'coke'
+        image = 'images/global/coke.svg'
+        alt = '酷可創念股份有限公司'
+    [[params.p4.logos]]
+        identifier = 'colaz'
+        image = 'images/global/colaz.png'
+        alt = '酷樂網'
+
+[params.p5]
+    heading = '最新消息'
+    [[params.p5.content]]
+        text = '關注我們的部落格，隨時獲取最新的自治動態與活動快訊！'
+
+[params.p6]
+    heading = '訂閱電子報'
+    [[params.p6.content]]
+        text = '留下您的電子信箱，第一時間收到我們的最新消息與活動通知！'
+    action = '#'
+    label = '電子信箱'
+    placeholder = '請輸入您的電子信箱'
+    button = '訂閱'
 
 [menu]
     [[menu.main]]
@@ -19,5 +96,10 @@ theme = 'tailbliss'
 
     [[menu.main]]
         name = '聯絡我們'
-        url = '/secretary/'
+        url = '/contact/'
         weight = 30
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
