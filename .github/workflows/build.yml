@@ -28,22 +28,14 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Install Dependencies (Follow Theme Author's Design)
+      - name: Install Dependencies
         run: |
-          # 1. 進入主題資料夾安裝，這會觸發 install.js
-          # install.js 會自動在專案根目錄生成正確的 package.json (包含 Linux 專用引擎)
+          npm init -y
+          npm install postcss postcss-cli autoprefixer        
           cd themes/tailbliss
           npm install
-          
-          # 2. 退回專案根目錄
           cd ../../
-          
-          # 3. 最關鍵的遺漏步驟！
-          # 根據 install.js 剛剛幫我們寫好的清單，實際下載這些底層依賴到根目錄
           npm install
-          
-          # 4. 補上 Hugo 呼叫所需的 PostCSS 殼（作者腳本沒包含這兩個）
-          npm install postcss postcss-cli
 
       - name: Build Hugo Site
         run: hugo --minify
