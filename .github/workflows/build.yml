@@ -41,7 +41,12 @@ jobs:
           # 進入主題目錄
           cd themes/tailbliss
           
-          # 官方步驟 1: 安裝依賴
+          # 【關鍵反制】修復 pnpm 的 workspace 錯誤
+          # 用 echo 強制把缺少的 packages 欄位寫入設定檔中，滿足 pnpm 的嚴格要求
+          echo "packages:" > pnpm-workspace.yaml
+          echo "  - '.'" >> pnpm-workspace.yaml
+          
+          # 官方步驟 1: 安裝依賴 (此時 pnpm 就不會再崩潰了)
           pnpm install
           
           # 官方步驟 2: 編譯 CSS (改為 production 版本)
