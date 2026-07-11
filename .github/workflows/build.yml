@@ -28,14 +28,23 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Install Dependencies
+      - name: Install Dependencies and Pre-build CSS
         run: |
           npm init -y
-          npm install postcss postcss-cli autoprefixer        
+          
           cd themes/tailbliss
           npm install
+          
+          npm run build:css
+          
           cd ../../
+          
           npm install
+          
+          npm install postcss postcss-cli
+
+      - name: Build Hugo Site
+        run: hugo --minify
 
       - name: Build Hugo Site
         run: hugo --minify
