@@ -99,6 +99,19 @@ theme = 'tailbliss'
         url = '/contact/'
         weight = 30
 
+    [[menu.footer]]
+        name = '關於我們'
+        url = '/abuot/'
+        weight = 10
+    [[menu.footer]]
+        name = '歷任幹事會'
+        url = '/secretary/'
+        weight = 20
+    [[menu.footer]]
+        name = '聯絡我們'
+        url = '/contact/'
+        weight = 30
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
