@@ -46,7 +46,7 @@ theme = 'tailbliss'
     [[params.p2.content]]
         text = '我們期待通過辦理各項有趣的活動，讓大家在忙於課程之餘，能夠調劑身心、聯絡情誼，快樂且順利地同舟共濟，度過大學四年的生活。'
     [[params.p2.content]]
-        text = '（右圖：114學年度耶誕晚會）'
+        text = '（圖：114學年度耶誕晚會）'
 
 [params.p3]
     heading = '自治事務'
@@ -54,12 +54,12 @@ theme = 'tailbliss'
     [[params.p3.content]]
         text = '另外，我們也在系上進行學生自治活動的推廣，期待通過促進同學們的參與，培養本系學生獨立、負責的態度，並一起成為「具人文關懷之社會菁英」。'
     [[params.p3.content]]
-        text = '（左圖：114學年度新生營，國立中央大學辦理）'
+        text = '（圖：114學年度新生營，國立中央大學辦理）'
 
 [params.p4]
     heading = '合作夥伴與贊助商'
     [[params.p4.content]]
-        text = '感謝以下合作夥伴與贊助商對本會活動的大力支持！因為有您，我們才能提供更好的服務與活動品質。'
+        text = '感謝合作夥伴與贊助商對本會活動的大力支持！因為有您，我們才能提供更好的服務與活動品質。'
     [[params.p4.logos]]
         identifier = 'coke'
         image = 'images/global/coke.svg'
