@@ -1,0 +1,15 @@
+{{- $src := .Get "src" -}}
+{{- $height := .Get "height" | default "600" -}}
+{{- $title := .Get "title" | default "Google Sheet" -}}
+{{- $class := .Get "class" | default "" -}}
+
+<div class="google-sheet-container my-6 w-full overflow-hidden rounded-xl border border-gray-200 shadow-sm dark:border-gray-700 {{ $class }}">
+  <iframe
+    src="{{ $src | safeURL }}"
+    class="w-full border-0 block"
+    height="{{ $height }}"
+    title="{{ $title }}"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
