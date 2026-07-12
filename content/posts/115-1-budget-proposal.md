@@ -9,4 +9,5 @@ categories = '預、決算'
 
 > !注意!：務必在預算調查結束後，才將此頁之草稿狀態解除。
 
-{{< google-sheet src="https://docs.google.com/spreadsheets/d/1_qJbcwJcfYZgQYOgcCw2T4oBbgS1SSW4ZBh5A6NxvnY/edit?usp=sharing">}}
+{{< google-sheet src="https://docs.google.com/spreadsheets/d/1_qJbcwJcfYZgQYOgcCw2T4oBbgS1SSW4ZBh5A6NxvnY/preview" >}}
+
