@@ -95,13 +95,39 @@ theme = 'tailbliss'
         weight = 20
 
     [[menu.main]]
+        identifier = 'posts-menu'
+        name = '文章與公告'
+        pre = 'dropdown'
+        weight = 30
+
+    [[menu.main]]
         name = '聯絡我們'
         url = '/contact/'
+        weight = 40
+
+    [[menu.posts-menu]]
+        name = '活動集錦'
+        url = '/categores/活動集錦'
+        weight = 10
+
+    [[menu.posts-menu]]
+        name = '法條規章'
+        url = '/categories/法條規章'
+        weight = 20
+
+    [[menu.posts-menu]]
+        name = '預、決算'
+        url = '/categories/預決算'
         weight = 30
+
+    [[menu.posts-menu]]
+        name = '會長令'
+        url = '/categories/會長令/'
+        weight = 40
 
     [[menu.footer]]
         name = '關於我們'
-        url = '/abuot/'
+        url = '/about/'
         weight = 10
     [[menu.footer]]
         name = '歷任幹事會'
