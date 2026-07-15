@@ -88,6 +88,10 @@ theme = 'tailbliss'
         name = '關於我們'
         url = '/about/'
         weight = 10
+    [[menu.main]]
+        name = '年度精彩活動'
+        url = '/events/'
+        weight = 15
 
     [[menu.main]]
         name = '歷任幹事會'
@@ -95,15 +99,26 @@ theme = 'tailbliss'
         weight = 20
 
     [[menu.main]]
+        name = '系運動團隊'
+        url = '/sports-teams'
+        weight = 25
+
+    [[menu.main]]
         identifier = 'posts-menu'
         name = '文章與公告'
         pre = 'dropdown'
+        url = '/posts'
         weight = 30
 
     [[menu.main]]
         name = '聯絡我們'
         url = '/contact/'
         weight = 40
+
+    [[menu.posts-menu]]
+        name = '運動榮譽榜'
+        url = '/categores/運動榮譽榜'
+        weight = 5
 
     [[menu.posts-menu]]
         name = '活動集錦'
