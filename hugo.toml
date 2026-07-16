@@ -38,7 +38,7 @@ theme = 'tailbliss'
     [[params.p1.content]]
         text = '本會《組織章程》明定：「本會之宗旨在促進凝聚全體會員之向心力，培養獨立、負責的精神。」'
     [[params.p1.content]]
-        text = '（左圖：115年度第17屆通訊營活動側拍）'
+        text = '（圖：115年度第17屆通訊營活動側拍）'
 
 [params.p2]
     heading = '活動辦理'
