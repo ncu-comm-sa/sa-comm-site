@@ -4,7 +4,21 @@
 baseURL = 'https://sa.ce.ncu.edu.tw'
 locale = 'zh-tw'
 title = 'SA COMM NCU'
-theme = 'tailbliss'
+[module]
+  [[module.imports]]
+    path = "tailbliss"
+    [[module.imports.mounts]]
+      source = "assets"
+      target = "assets"
+    [[module.imports.mounts]]
+      source = "layouts"
+      target = "layouts"
+    [[module.imports.mounts]]
+      source = "static"
+      target = "static"
+    [[module.imports.mounts]]
+      source = "archetypes"
+      target = "archetypes"
 
 [params]
     author = '國立中央大學通訊工程學系系學會'
@@ -89,8 +103,9 @@ theme = 'tailbliss'
         url = '/about/'
         weight = 10
     [[menu.main]]
+        identifier = 'events-menu'
         name = '年度精彩活動'
-        url = '/events/'
+        pre = 'dropdown'
         weight = 15
 
     [[menu.main]]
@@ -107,8 +122,7 @@ theme = 'tailbliss'
         identifier = 'posts-menu'
         name = '文章與公告'
         pre = 'dropdown'
-        url = '/posts'
-        weight = 30
+        weight = 12
 
     [[menu.main]]
         name = '聯絡我們'
@@ -140,14 +154,36 @@ theme = 'tailbliss'
         url = '/categories/會長令/'
         weight = 40
 
+    [[menu.events-menu]]
+        name = '活動總覽'
+        url = '/events'
+        weight = 10
+
+    [[menu.events-menu]]
+        name = '通訊營（暑期）'
+        url = '/comm-summer-camp'
+        weight = 20
+
     [[menu.footer]]
         name = '關於我們'
         url = '/about/'
         weight = 10
     [[menu.footer]]
+        name = '文章與公告'
+        url = '/posts'
+        weight = 15
+    [[menu.footer]]
+        name = '活動總覽'
+        url = '/events'
+        weight = 16
+    [[menu.footer]]
         name = '歷任幹事會'
         url = '/secretary/'
         weight = 20
+    [[menu.footer]]
+        name = '系運動團隊'
+        url = '/sports-teams'
+        weight = 25
     [[menu.footer]]
         name = '聯絡我們'
         url = '/contact/'
