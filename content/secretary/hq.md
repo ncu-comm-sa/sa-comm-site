@@ -16,7 +16,7 @@ title: "會本部"
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;" class="my-6">
 <figure style="width: 150px;" class="text-center">
-    {{< imgc src="115-leaders/林郁翔.png" alt="會長林郁翔" >}}
+    {{< imgc src="115-leaders/林郁翔.jpg" alt="會長林郁翔" >}}
     <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-medium tracking-wide">
         會長：林郁翔
     </figcaption>
