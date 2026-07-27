@@ -109,8 +109,9 @@ title = 'SA COMM NCU'
         weight = 15
 
     [[menu.main]]
-        name = '歷任幹事會'
-        url = '/secretary/'
+        identifier = 'secretary-menu'
+        pre = 'dropdown'
+        name = '幹事會組織'
         weight = 20
 
     [[menu.main]]
@@ -164,6 +165,41 @@ title = 'SA COMM NCU'
         url = '/comm-summer-camp'
         weight = 20
 
+    [[menu.secretary-menu]]
+        name = '歷任幹部'
+        url = '/secretary'
+        weight = 10
+
+    [[menu.secretary-menu]]
+        name = '會本部'
+        url = '/secretary/hq'
+        weight = 20
+    
+    [[menu.secretary-menu]]
+        name = '公關部'
+        url = '/secretary/pr'
+        weight = 30
+    
+    [[menu.secretary-menu]]
+        name = '美宣部'
+        url = '/secretary/design'
+        weight = 40
+    
+    [[menu.secretary-menu]]
+        name = '資訊部'
+        url = '/secretary/information'
+        weight = 40
+    
+    [[menu.secretary-menu]]
+        name = '活動部'
+        url = '/secretary/activities'
+        weight = 50
+    
+    [[menu.secretary-menu]]
+        name = '體材部'
+        url = '/secretary/sports'
+        weight = 60
+
     [[menu.footer]]
         name = '關於我們'
         url = '/about/'
@@ -177,7 +213,7 @@ title = 'SA COMM NCU'
         url = '/events'
         weight = 16
     [[menu.footer]]
-        name = '歷任幹事會'
+        name = '歷任幹部'
         url = '/secretary/'
         weight = 20
     [[menu.footer]]
