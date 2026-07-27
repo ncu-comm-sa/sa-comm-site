@@ -162,7 +162,7 @@ title = 'SA COMM NCU'
 
     [[menu.events-menu]]
         name = '通訊營（暑期）'
-        url = '/comm-summer-camp'
+        url = '/events/comm-summer-camp'
         weight = 20
 
     [[menu.secretary-menu]]

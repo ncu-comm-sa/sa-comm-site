@@ -9,17 +9,32 @@ featured_image = 'images/featured/comm-summer-camp.jpg'
 中央通訊營是一場兼具專業學術深度與熱血大學體驗的精彩旅程。通常於七月中舉辦，由大一與大二生籌備約四個月的時間，提供對本系有興趣的高中生們參與。活動內容如下：
 
 ## 學術課程
-{{< imgc src="pages/comm17-lecture.JPG" alt="通訊營課程活動" >}}
+<figure class="my-6 text-center">
+    {{< imgc src="pages/comm17-lecture.JPG" alt="通訊營課程活動" >}}
+    <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+        第十七屆通訊營，於電機／通訊系電子電路實驗室（E1-223）進行課程實作教學。
+    </figcaption>
+</figure>
 
 我們引領學員深入資訊與通訊的核心，手把手教學 C 語言與 C++ 語言的基礎邏輯，並透過 Arduino 的實際動手操作，將寫好的程式碼與硬體電路結合，讓理論不再流於紙上談兵。
 
-{{< imgc src="pages/comm17-keynote.JPG" alt="通訊營專家演講" >}}
+<figure class="my-6 text-center">
+    {{< imgc src="pages/comm17-keynote.JPG" alt="通訊營專家演講" >}}
+    <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+        第十七屆通訊營，邀請<a href="https://www.auden.com.tw/foundation/">財團法人輝登炳南教育基金會</a>專業講師進行演講。
+    </figcaption>
+</figure>
 
 此外，營隊更開設了多門通訊科普課程，並邀請系上教授與企業專家進行專題演講，幫助學員拓展科技視野、掌握產業未來的最新脈動。
 
 ## 團康活動
 
-{{< imgc src="pages/comm17-fun.JPG" alt="通訊營團康活動" >}}
+<figure class="my-6 text-center">
+    {{< imgc src="pages/comm17-fun.JPG" alt="通訊營團康活動" >}}
+    <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+        第十七屆通訊營團康系列活動一隅。
+    </figcaption>
+</figure>
 
 除了充實的知識學習，豐富的團康活動更是營隊不可或缺的靈魂。
 
