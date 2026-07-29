@@ -14,3 +14,4 @@ categories = '預、決算'
 
 {{< google-sheet src="https://docs.google.com/spreadsheets/d/1_qJbcwJcfYZgQYOgcCw2T4oBbgS1SSW4ZBh5A6NxvnY/preview" >}}
 
+由於網站之技術限制，若上方嵌入之 Google 試算表閱讀上有困難，請[至此瀏覽](https://docs.google.com/spreadsheets/d/1_qJbcwJcfYZgQYOgcCw2T4oBbgS1SSW4ZBh5A6NxvnY/edit?usp=sharing)。
